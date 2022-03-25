@@ -1,23 +1,37 @@
 package src;
 
+import java.util.ArrayList;
+
 // Get all cobinations of keypad
 
 public class Que12 {
+    static String[] codes = { ",.;", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
     public static void main(String[] args) {
-        getAllCombinations("", "23");
+        ArrayList<String> result = getAllCombinations("23");
+        System.out.println(result);
     }
     
-    public static void getAllCombinations(String p, String up) {
-        if (up.isEmpty()) {
-            System.out.println(p);
-            return;
+    public static ArrayList<String> getAllCombinations(String str) {
+        if (str.length() == 0) {
+            ArrayList<String> bres = new ArrayList<>();
+            bres.add("");
+            return bres;
         }
 
-        int digit = up.charAt(0) - '0';
+        char ch = str.charAt(0);
 
-        for (int i = (digit - 2) * 3; i < (digit - 1) * 3; i++) {
-            char ch = (char) ('a' + i);
-            getAllCombinations(p + ch, up.substring(1));
+        ArrayList<String> temp = getAllCombinations(str.substring(1));
+        ArrayList<String> result = new ArrayList<>();
+
+        String code = codes[ch - '0' - 1];
+
+        for (int i = 0; i < code.length(); i++) {
+            char codeCh = code.charAt(i);
+            for (String string : temp) {
+                result.add(codeCh + string);
+            }
         }
+
+        return result;
     }
 }
