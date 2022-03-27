@@ -1,6 +1,6 @@
 package src;
 
-// return all the paths from 'nth' step to '0th' step
+// get all the paths from 'nth' step to '0th' step
 
 import java.util.ArrayList;
 

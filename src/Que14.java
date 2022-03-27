@@ -2,7 +2,7 @@ package src;
 
 import java.util.ArrayList;
 
-// Find all possible paths in maze to reach last cell
+// Find all possible paths in maze to reach last cell (Only right & downside movement allowed)
 
 public class Que14 {
     public static void main(String[] args) {
