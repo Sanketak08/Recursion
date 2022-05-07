@@ -3,9 +3,11 @@ package src;
 
 public class Que5 {
     public static void main(String[] args) {
-        towerOfHanoi(5, 1, 2, 3);
+        towerOfHanoi(3, 1, 2, 3);
     }
-
+    // From => 'a'
+    // To => 'b'
+    // Auxillary rod => 'c'
     static void towerOfHanoi(int n, int a, int b, int c) {
         if (n == 0) {
             return;
