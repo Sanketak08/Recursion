@@ -23,8 +23,8 @@ public class Que7 {
 
     //* Without using static variable
     static int maxOfArrayNew(int[] arr, int index) {
-        if (index == arr.length) {
-            return max;
+        if (index == arr.length - 1) {
+            return arr[index];
         }
 
         int tempMax = maxOfArrayNew(arr, index + 1);
